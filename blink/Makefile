@@ -3,15 +3,17 @@ TARGET_DIR  = target
 SRC_DIR     = src
 STARTUP_DIR = startup
 LINKER_DIR  = linker
+LPC8XX      = ../lpc8xx
+CMSIS       = $(LPC8XX)/cmsis
+STARTUP     = $(LPC8XX)/startup/gcc_startup_lpc8xx.c
 
 TARGET_ELF  = $(TARGET_DIR)/$(TARGET).elf
 TARGET_HEX  = $(TARGET_DIR)/$(TARGET).hex
 TARGET_BIN  = $(TARGET_DIR)/$(TARGET).bin
 
 CSRCS    = $(SRC_DIR)/main.c
-CSRCS   += $(STARTUP_DIR)/gcc_startup_lpc8xx.c
+CSRCS   += $(STARTUP)
 LNKSRC   = $(LINKER_DIR)/lpc810.ld
-CMSIS    = cmsis
 
 USB      = /dev/ttyUSB0
 
